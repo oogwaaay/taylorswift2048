@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>taylorswift2048.club - Original 2048, Taylor Swift 2048, 2048 Cupcakes and Other Popular Versions Collection</title>
+    <meta name="description" content="Play 2048 game online for free! Includes Original 2048, 2048 Cupcakes, Taylor Swift 2048 and many other variants.">
+    <meta name="keywords" content="2048, Taylor Swift 2048, 2048 Cupcakes, AI 2048, 2048 games, puzzle games, taylorswift2048.club">
+    <link rel="canonical" href="http://taylorswift2048.club">
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="shortcut icon" href="favicon.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <h1><a href="/">taylorswift2048.club</a></h1>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/classic-2048/">Classic 2048</a></li>
+                    <li><a href="/2048-cupcakes/">2048 Cupcakes</a></li>
+                    <li><a href="/taylor-swift-2048/">Taylor Swift 2048</a></li>
+                    <li><a href="/2048-ai/">AI 2048</a></li>
+                    <li><a href="/2048-variants/">All 2048 Games</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Home Page -->
+        <section id="home">
+            <div class="container">
+                <h1>2048 Game</h1>
+                
+                <!-- Classic 2048 Game Embed -->
+                <section id="play-original" class="game-section">
+                    <div class="game-container">
+                        <div class="game-header">
+                            <h3>2048</h3>
+                            <div class="score-container">
+                                <div class="score-box">
+                                    <div class="score-title">Score</div>
+                                    <div class="score" id="score">0</div>
+                                </div>
+                                <div class="score-box">
+                                    <div class="score-title">Best</div>
+                                    <div class="best" id="best">0</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="game-board" id="game-board"></div>
+                        <div class="game-controls">
+                            <button id="new-game">New Game</button>
+                            <button id="original-sound">Sound: On</button>
+                            <div class="game-info">
+                                <h4>How to Play</h4>
+                                <p>Use arrow keys to move tiles. Merge tiles of the same value to create larger numbers.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Game Variants -->
+                <section class="popular-versions">
+                    <h3>Play Other Versions</h3>
+                    <div class="version-grid">
+                        <div class="version-card">
+                            <h4>Original 2048</h4>
+                            <p>The classic 4x4 grid game that started it all.</p>
+                            <a href="/classic-2048/" class="btn">Play Now</a>
+                        </div>
+                        <div class="version-card">
+                            <h4>Taylor Swift 2048</h4>
+                            <p>Merge Taylor Swift's album covers to unlock new eras.</p>
+                            <a href="/taylor-swift-2048/" class="btn">Play Now</a>
+                        </div>
+                        <div class="version-card">
+                            <h4>2048 Cupcakes</h4>
+                            <p>Sweet version with cupcake tiles and special features.</p>
+                            <a href="/2048-cupcakes/" class="btn">Play Now</a>
+                        </div>
+                        <div class="version-card">
+                            <h4>AI 2048</h4>
+                            <p>Watch an AI automatically play 2048 and reach the highest tile possible!</p>
+                            <a href="/2048-ai/" class="btn">Try Now</a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+
+        <!-- Classic 2048 Page -->
+        <section id="classic-2048" style="display: none;">
+            <div class="container">
+                <h1>Original 2048 Game</h1>
+                <h2>Classic 2048</h2>
+                
+                <!-- Game Section -->
+                <div class="game-section">
+                    <div class="game-container">
+                        <div class="game-header">
+                            <h3>Game Basic Information</h3>
+                            <div class="score-container">
+                                <div class="score-box">
+                                    <div class="score-title">Score</div>
+                                    <div class="score" id="classic-score">0</div>
+                                </div>
+                                <div class="score-box">
+                                    <div class="score-title">Best</div>
+                                    <div class="best" id="classic-best">0</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="game-board" id="classic-game-board"></div>
+                        <div class="game-controls">
+                            <button id="classic-new-game">New Game</button>
+                            <button id="classic-sound">Sound: On</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Detailed Rules -->
+                <section class="detailed-rules">
+                    <h3>Detailed Rules</h3>
+                    
+                    <div class="rule-section">
+                        <h4>Creator and Release Date</h4>
+                        <p>2048 was created by Gabriele Cirulli and first released in March 2014 as a web-based game.</p>
+                    </div>
+                    
+                    <div class="rule-section">
+                        <h4>Core Objective</h4>
+                        <p>The goal is to create a tile with the number 2048 by merging tiles of the same value.</p>
+                    </div>
+                    
+                    <div class="rule-section">
+                        <h4>How to Play</h4>
+                        <p>Use your keyboard's arrow keys (or swipe on mobile) to move all tiles in one direction. Tiles will slide as far as possible in the chosen direction until they hit the edge of the grid or another tile.</p>
+                    </div>
+                    
+                    <div class="rule-section">
+                        <h4>Tile Spawning Rules</h4>
+                        <p>After each valid move, a new tile will appear in a random empty spot on the board. The new tile will be either 2 (90% chance) or 4 (10% chance).</p>
+                    </div>
+                    
+                    <div class="rule-section">
+                        <h4>Merging Rules</h4>
+                        <p>When two tiles of the same value collide while moving, they merge into a single tile with a value equal to their sum. For example, two 2s merge into a 4, two 4s merge into an 8, and so on.</p>
+                        <p>In a single move, newly merged tiles cannot merge again. When three or four tiles of the same value are in a row, only the two closest to the direction of movement will merge first.</p>
+                    </div>
+                    
+                    <div class="rule-section">
+                        <h4>Scoring System</h4>
+                        <p>Each time you merge two tiles, you earn points equal to the value of the resulting tile. For example, merging two 4s into an 8 gives you 8 points.</p>
+                    </div>
+                    
+                    <div class="rule-section">
+                        <h4>Board Sizes and Extensions</h4>
+                        <p>The standard version uses a 4x4 grid, but some variants offer larger grids like 5x5, 6x6, or even 8x8.</p>
+                    </div>
+                    
+                    <div class="rule-section">
+                        <h4>Game Over Conditions</h4>
+                        <p>The game ends when the board is full and no more moves can be made (no adjacent tiles of the same value).</p>
+                    </div>
+                    
+                    <div class="rule-section">
+                        <h4>Maximum Theoretical Tile</h4>
+                        <p>In a standard 4x4 game, the maximum theoretical tile is 131072.</p>
+                    </div>
+                </section>
+
+                <!-- Advanced Tips -->
+                <section class="advanced-tips">
+                    <h3>Advanced Tips / High Score Strategies</h3>
+                    <ul>
+                        <li>Focus on keeping your highest tile in a corner to maximize space and minimize movement.</li>
+                        <li>Try to build a "snake" pattern from the corner to keep tiles organized.</li>
+                        <li>Always keep the board as tidy as possible, avoiding scattered tiles.</li>
+                        <li>Prioritize merging larger tiles when possible, but don't neglect smaller ones.</li>
+                        <li>Plan your moves ahead to avoid getting stuck with no available moves.</li>
+                    </ul>
+                </section>
+            </div>
+        </section>
+
+        <!-- 2048 Cupcakes Page -->
+        <section id="2048-cupcakes" style="display: none;">
+            <div class="container">
+                <h1>2048 Cupcakes - Sweet Puzzle Game</h1>
+                <h2>2048 Cupcakes</h2>
+                
+                <!-- Game Section -->
+                <div class="game-section">
+                    <div class="game-container">
+                        <div class="game-header">
+                            <h3>2048 Cupcakes</h3>
+                            <div class="score-container">
+                                <div class="score-box">
+                                    <div class="score-title">Score</div>
+                                    <div class="score" id="cupcakes-score">0</div>
+                                </div>
+                                <div class="score-box">
+                                    <div class="score-title">Best</div>
+                                    <div class="best" id="cupcakes-best">0</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="game-board" id="cupcakes-game-board"></div>
+                        <div class="game-controls">
+                            <button id="cupcakes-new-game">New Game</button>
+                            <button id="cupcakes-undo">Undo</button>
+                            <button id="cupcakes-sound">Sound: On</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Game Description -->
+                <section class="game-description">
+                    <h3>Website Information</h3>
+                    <p>2048 Cupcakes is a delightful twist on the classic 2048 game, featuring sweet cupcake-themed tiles instead of numbers. This version retains all the addictive gameplay of the original while adding a fun, colorful dessert theme.</p>
+                </section>
+
+                <!-- How to Play -->
+                <section class="how-to-play">
+                    <h3>How to Play</h3>
+                    <div class="play-info">
+                        <div class="play-item">
+                            <h4>Visual Presentation</h4>
+                            <p>The game uses a 4x4 grid with beautifully designed cupcake tiles. Each cupcake design represents a different value, starting from basic cupcakes and progressing to more elaborate ones as you merge tiles.</p>
+                        </div>
+                        <div class="play-item">
+                            <h4>Game Rules</h4>
+                            <p>Slide cupcakes in any direction using arrow keys or swipes. Merge identical cupcakes to create a more elaborate cupcake. The goal is to create the most delicious cupcake of all!</p>
+                        </div>
+                        <div class="play-item">
+                            <h4>Special Features</h4>
+                            <ul>
+                                <li><strong>UNDO:</strong> Reverse your last move if you make a mistake.</li>
+                                <li><strong>Sound Effects:</strong> Enjoy sweet sounds as you merge cupcakes.</li>
+                                <li><strong>Cupcake Levels:</strong> Each merge creates a more elaborate cupcake design.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Cupcake Levels -->
+                <section class="cupcake-levels">
+                    <h3>Cupcake Levels</h3>
+                    <div class="levels-grid">
+                        <div class="level-item">
+                            <img src="assets/img/cupcakes/2.png" alt="Basic Cupcake" style="width: 60px; height: 60px; object-fit: contain; margin-bottom: 10px;">
+                            <div class="level-value">2</div>
+                            <div class="level-name">Basic Cupcake</div>
+                        </div>
+                        <div class="level-item">
+                            <img src="assets/img/cupcakes/4.png" alt="Vanilla Cupcake" style="width: 60px; height: 60px; object-fit: contain; margin-bottom: 10px;">
+                            <div class="level-value">4</div>
+                            <div class="level-name">Vanilla Cupcake</div>
+                        </div>
+                        <div class="level-item">
+                            <img src="assets/img/cupcakes/8.png" alt="Chocolate Cupcake" style="width: 60px; height: 60px; object-fit: contain; margin-bottom: 10px;">
+                            <div class="level-value">8</div>
+                            <div class="level-name">Chocolate Cupcake</div>
+                        </div>
+                        <div class="level-item">
+                            <img src="assets/img/cupcakes/16.png" alt="Strawberry Cupcake" style="width: 60px; height: 60px; object-fit: contain; margin-bottom: 10px;">
+                            <div class="level-value">16</div>
+                            <div class="level-name">Strawberry Cupcake</div>
+                        </div>
+                        <div class="level-item">
+                            <img src="assets/img/cupcakes/32.png" alt="Blueberry Cupcake" style="width: 60px; height: 60px; object-fit: contain; margin-bottom: 10px;">
+                            <div class="level-value">32</div>
+                            <div class="level-name">Blueberry Cupcake</div>
+                        </div>
+                        <div class="level-item">
+                            <img src="assets/img/cupcakes/64.png" alt="Rainbow Cupcake" style="width: 60px; height: 60px; object-fit: contain; margin-bottom: 10px;">
+                            <div class="level-value">64</div>
+                            <div class="level-name">Rainbow Cupcake</div>
+                        </div>
+                        <div class="level-item">
+                            <img src="assets/img/cupcakes/128.png" alt="Sprinkle Cupcake" style="width: 60px; height: 60px; object-fit: contain; margin-bottom: 10px;">
+                            <div class="level-value">128</div>
+                            <div class="level-name">Sprinkle Cupcake</div>
+                        </div>
+                        <div class="level-item">
+                            <img src="assets/img/cupcakes/256.png" alt="Cream Cupcake" style="width: 60px; height: 60px; object-fit: contain; margin-bottom: 10px;">
+                            <div class="level-value">256</div>
+                            <div class="level-name">Cream Cupcake</div>
+                        </div>
+                        <div class="level-item">
+                            <img src="assets/img/cupcakes/512.png" alt="Fancy Cupcake" style="width: 60px; height: 60px; object-fit: contain; margin-bottom: 10px;">
+                            <div class="level-value">512</div>
+                            <div class="level-name">Fancy Cupcake</div>
+                        </div>
+                        <div class="level-item">
+                            <img src="assets/img/cupcakes/1024.png" alt="Deluxe Cupcake" style="width: 60px; height: 60px; object-fit: contain; margin-bottom: 10px;">
+                            <div class="level-value">1024</div>
+                            <div class="level-name">Deluxe Cupcake</div>
+                        </div>
+                        <div class="level-item">
+                            <img src="assets/img/cupcakes/2048.png" alt="Ultimate Cupcake" style="width: 60px; height: 60px; object-fit: contain; margin-bottom: 10px;">
+                            <div class="level-value">2048</div>
+                            <div class="level-name">Ultimate Cupcake</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- FAQ / Tips -->
+                <section class="faq">
+                    <h3>Frequently Asked Questions / Tips</h3>
+                    <div class="faq-items">
+                        <div class="faq-item">
+                            <h4>Is there a maximum cupcake level?</h4>
+                            <p>While the primary goal is to reach the Ultimate Cupcake (2048), you can continue playing to create even more elaborate cupcakes if you have the skill!</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4>How do I improve my score?</h4>
+                            <p>Focus on merging larger cupcakes whenever possible, and try to keep your board organized to maximize merges.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4>Can I play 2048 Cupcakes on mobile?</h4>
+                            <p>Yes! The game is fully responsive and can be played on both desktop and mobile devices.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+
+        <!-- Taylor Swift 2048 Page -->
+        <section id="taylor-swift-2048" style="display: none;">
+            <div class="container">
+                <h1>Taylor Swift 2048 - Album Era Puzzle Game</h1>
+                <h2>Taylor Swift 2048</h2>
+                
+                <!-- Hero Section with Play Button -->
+                <section class="hero">
+                    <div class="hero-content">
+                        <h3>Play Taylor Swift 2048</h3>
+                        <p>Merge Taylor Swift's album covers to unlock new eras and relive her musical journey!</p>
+                        <div class="buttons">
+                            <a href="https://2048cupcakes.net/taylor-swift-cupcakes-2048#google_vignette" class="btn" target="_blank" rel="noopener nofollow">Play Now</a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Game Description -->
+                <section class="game-description">
+                    <h3>About Taylor Swift 2048</h3>
+                    <p>Taylor Swift 2048 is a fan-favorite variant that combines the addictive gameplay of 2048 with the iconic albums of Taylor Swift. This unique version allows you to merge album covers to unlock new eras and experience Taylor's musical evolution through an engaging puzzle game.</p>
+                    <p>Perfect for Swifties and puzzle game enthusiasts alike, this game offers hours of entertainment as you work your way through Taylor's discography, from her debut album to her latest releases.</p>
+                </section>
+
+                <!-- How to Play -->
+                <section class="how-to-play">
+                    <h3>How to Play</h3>
+                    <div class="play-info">
+                        <div class="play-item">
+                            <h4>Gameplay</h4>
+                            <p>Use arrow keys or swipe on mobile to move album covers in any direction. When two covers of the same album touch, they merge to form the next album in Taylor's discography.</p>
+                        </div>
+                        <div class="play-item">
+                            <h4>Objective</h4>
+                            <p>Continue merging albums until you reach the ultimate goal: The Tortured Poets Department! Along the way, you'll unlock each era of Taylor's career and earn points for each merge.</p>
+                        </div>
+                        <div class="play-item">
+                            <h4>Features</h4>
+                            <ul>
+                                <li>Official album covers for each era</li>
+                                <li>Points system to track your progress</li>
+                                <li>Responsive design for all devices</li>
+                                <li>Hours of addictive gameplay</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Album Eras -->
+                <section class="album-list">
+                    <h3>Taylor Swift Album Eras</h3>
+                    <div class="albums-grid">
+                        <div class="album-item">
+                            <div class="album-value">2</div>
+                            <div class="album-name">Taylor Swift (2006)</div>
+                            <div class="album-era">Debut Era</div>
+                        </div>
+                        <div class="album-item">
+                            <div class="album-value">4</div>
+                            <div class="album-name">Fearless (2008)</div>
+                            <div class="album-era">Fearless Era</div>
+                        </div>
+                        <div class="album-item">
+                            <div class="album-value">8</div>
+                            <div class="album-name">Speak Now (2010)</div>
+                            <div class="album-era">Speak Now Era</div>
+                        </div>
+                        <div class="album-item">
+                            <div class="album-value">16</div>
+                            <div class="album-name">Red (2012)</div>
+                            <div class="album-era">Red Era</div>
+                        </div>
+                        <div class="album-item">
+                            <div class="album-value">32</div>
+                            <div class="album-name">1989 (2014)</div>
+                            <div class="album-era">1989 Era</div>
+                        </div>
+                        <div class="album-item">
+                            <div class="album-value">64</div>
+                            <div class="album-name">Reputation (2017)</div>
+                            <div class="album-era">Reputation Era</div>
+                        </div>
+                        <div class="album-item">
+                            <div class="album-value">128</div>
+                            <div class="album-name">Lover (2019)</div>
+                            <div class="album-era">Lover Era</div>
+                        </div>
+                        <div class="album-item">
+                            <div class="album-value">256</div>
+                            <div class="album-name">Folklore (2020)</div>
+                            <div class="album-era">Folklore Era</div>
+                        </div>
+                        <div class="album-item">
+                            <div class="album-value">512</div>
+                            <div class="album-name">Evermore (2020)</div>
+                            <div class="album-era">Evermore Era</div>
+                        </div>
+                        <div class="album-item">
+                            <div class="album-value">1024</div>
+                            <div class="album-name">Midnights (2022)</div>
+                            <div class="album-era">Midnights Era</div>
+                        </div>
+                        <div class="album-item">
+                            <div class="album-value">2048</div>
+                            <div class="album-name">The Tortured Poets Department (2024)</div>
+                            <div class="album-era">TTPD Era</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Call to Action -->
+                <section class="cta-section">
+                    <h3>Ready to Play?</h3>
+                    <p>Click the button below to start playing Taylor Swift 2048 and unlock all of Taylor's musical eras!</p>
+                    <div class="buttons">
+                        <a href="https://2048cupcakes.net/taylor-swift-cupcakes-2048#google_vignette" class="btn" target="_blank" rel="noopener nofollow">Play Taylor Swift 2048 Now</a>
+                    </div>
+                </section>
+
+                <!-- SEO Content -->
+                <section class="seo-content">
+                    <h3>Taylor Swift 2048 Game Details</h3>
+                    <p>Taylor Swift 2048 is a unique puzzle game that combines the classic 2048 gameplay with Taylor Swift's iconic album covers. Players merge album covers to progress through Taylor's musical eras, starting from her debut album and working their way up to her latest release, The Tortured Poets Department.</p>
+                    <p>The game features all of Taylor's studio albums, including Taylor Swift (2006), Fearless (2008), Speak Now (2010), Red (2012), 1989 (2014), Reputation (2017), Lover (2019), Folklore (2020), Evermore (2020), Midnights (2022), and The Tortured Poets Department (2024).</p>
+                    <p>Whether you're a die-hard Swiftie or just a fan of puzzle games, Taylor Swift 2048 offers a fun and engaging way to experience Taylor's musical journey while challenging your puzzle-solving skills.</p>
+                </section>
+            </div>
+        </section>
+
+        <!-- AI 2048 Page -->
+        <section id="2048-ai" style="display: none;">
+            <div class="container">
+                <h1>AI 2048 - Watch Artificial Intelligence Play 2048</h1>
+                <h2>AI 2048</h2>
+                
+                <div class="above-game">
+                    <p>Watch the AI join the numbers and get to the highest tile it can!</p>
+                </div>
+
+                <div style="text-align: center; margin: 30px 0;">
+                    <iframe src="ai-2048/index.html" width="600" height="800" frameborder="0" style="border: none; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"></iframe>
+                </div>
+
+                <p class="game-explanation">
+                Created by AJ Richardson. Based on <a href="http://gabrielecirulli.github.io/2048">2048 by Gabriele Cirulli</a> and conceptually similar to <a href="http://asherv.com/threes/" target="_blank">Threes by Asher Vollmer</a>.
+                </p>
+            </div>
+        </section>
+
+        <!-- 2048 Variants Page -->
+        <section id="2048-variants" style="display: none;">
+            <div class="container">
+                <h1>All 2048 Games - Complete Collection of 2048 Variants</h1>
+                <h2>All 2048 Games</h2>
+                
+                <!-- Category Navigation -->
+                <section class="category-nav">
+                    <h3>2048 Variants</h3>
+                    <div class="categories">
+                        <a href="#dessert-variants" class="category-link">Dessert & Drink Variants</a>
+                        <a href="#holiday-variants" class="category-link">Holiday Variants</a>
+                        <a href="#music-variants" class="category-link">Music Variants</a>
+                        <a href="#advanced-variants" class="category-link">Advanced Rules Variants</a>
+                    </div>
+                </section>
+
+                <!-- Dessert & Drink Variants -->
+                <section id="dessert-variants" class="variant-section">
+                    <h3>Dessert & Drink Variants</h3>
+                    <div class="variant-grid">
+                        <div class="variant-card">
+                            <h4>2048 Cupcakes</h4>
+                            <p>A sweet twist on the classic game featuring cupcake-themed tiles. Merge cupcakes to create more elaborate designs!</p>
+                            <a href="/2048-cupcakes/" class="btn">Play Now</a>
+                        </div>
+                        <div class="variant-card">
+                            <h4>2048 Ice Cream</h4>
+                            <p>Chill out with this frozen treat variant. Merge ice cream cones of the same flavor to create new ones!</p>
+                            <a href="#" class="btn">Play Now</a>
+                        </div>
+                        <div class="variant-card">
+                            <h4>2048 Coffee</h4>
+                            <p>Wake up and play with coffee-themed tiles. Merge cups of coffee to create stronger brews!</p>
+                            <a href="#" class="btn">Play Now</a>
+                        </div>
+                        <div class="variant-card">
+                            <h4>2048 Hot Chocolate</h4>
+                            <p>Warm up with this cozy variant. Merge mugs of hot chocolate to create richer, more decadent drinks!</p>
+                            <a href="#" class="btn">Play Now</a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Holiday Variants -->
+                <section id="holiday-variants" class="variant-section">
+                    <h3>Holiday Variants</h3>
+                    <div class="variant-grid">
+                        <div class="variant-card">
+                            <h4>2048 Christmas</h4>
+                            <p>Get into the holiday spirit with Christmas-themed tiles. Merge Santa hats, presents, and Christmas trees!</p>
+                            <a href="https://2048cupcakes.net/christmas-cupcakes-2048" class="btn" target="_blank" rel="noopener nofollow">Play Now</a>
+                        </div>
+                        <div class="variant-card">
+                            <h4>2048 Halloween</h4>
+                            <p>Spooky fun with Halloween-themed tiles. Merge pumpkins, ghosts, and witches' hats!</p>
+                            <a href="#" class="btn">Play Now</a>
+                        </div>
+                        <div class="variant-card">
+                            <h4>2048 Easter</h4>
+                            <p>Hop into fun with Easter-themed tiles. Merge colorful eggs, bunnies, and baskets!</p>
+                            <a href="#" class="btn">Play Now</a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Music Variants -->
+                <section id="music-variants" class="variant-section">
+                    <h3>Music Variants</h3>
+                    <div class="variant-grid">
+                        <div class="variant-card">
+                            <h4>Taylor Swift 2048</h4>
+                            <p>Merge Taylor Swift's album covers to progress through her musical eras. A must-play for Swifties!</p>
+                            <a href="/taylor-swift-2048/" class="btn">Play Now</a>
+                        </div>
+                        <div class="variant-card">
+                            <h4>Circle of Fifths 2048</h4>
+                            <p>A musical twist on the classic game, based on the Circle of Fifths in music theory.</p>
+                            <a href="#" class="btn">Play Now</a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Advanced Rules Variants -->
+                <section id="advanced-variants" class="variant-section">
+                    <h3>Advanced Rules Variants</h3>
+                    <div class="variant-grid">
+                        <div class="variant-card">
+                            <h4>3D 4096</h4>
+                            <p>A 3D version of the game with a higher target of 4096. More challenging and visually impressive!</p>
+                            <a href="#" class="btn">Play Now</a>
+                        </div>
+                        <div class="variant-card">
+                            <h4>3D 256</h4>
+                            <p>A simpler 3D variant with a target of 256, perfect for beginners to 3D puzzles.</p>
+                            <a href="#" class="btn">Play Now</a>
+                        </div>
+                        <div class="variant-card">
+                            <h4>23</h4>
+                            <p>A unique variant where tiles increase by 1 each merge, with a target of 23. More strategic than it sounds!</p>
+                            <a href="#" class="btn">Play Now</a>
+                        </div>
+                        <div class="variant-card">
+                            <h4>2048 Power Compendium</h4>
+                            <p>A collection of over 100 different 2048 variants with different number sequences and rule sets.</p>
+                            <a href="#" class="btn">Explore Now</a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- AI 2048 -->
+                <section id="ai-2048" class="variant-section">
+                    <h3>AI 2048</h3>
+                    <div class="variant-grid">
+                        <div class="variant-card">
+                            <h4>AI 2048</h4>
+                            <p>Watch an AI automatically play 2048 and reach the highest tile possible! Based on the open-source AI algorithm.</p>
+                            <a href="/2048-ai/" class="btn">Try Now</a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <h2>About Us</h2>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Website Introduction</h3>
+                    <p>taylorswift2048.club is your one-stop destination for all things 2048. We offer the classic game, along with popular variants like 2048 Cupcakes and Taylor Swift 2048. Our mission is to provide a fun, accessible platform for players to enjoy this addictive puzzle game in all its forms.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>Have questions or suggestions? Feel free to reach out to us at contact@taylorswift2048.club.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Privacy Policy</h3>
+                    <p>We respect your privacy and are committed to protecting your personal information. Our privacy policy outlines how we collect, use, and safeguard your data.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 taylorswift2048.club. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
